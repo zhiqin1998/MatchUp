@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>FutureHack</title>
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+    <style>
+    .text {
+        font-family: Helvetica;
+    }
+
+    .input-label {
+        display: inline-block;
+        width: 130px;
+        padding-top: 8px;
+    }
+
+    .el-row {
+        margin-bottom: 20px;
+    }
+
+    .el-col {
+        border-radius: 4px;
+    }
+
+    .activity {
+        font-size: 19px;
+    }
+
+    .joined {
+        font-size: 14px;
+        padding-left: 450px
+    }
+
+    .time {
+        font-size: 14px
+    }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <top></top>
+        <div class="input-suffix text" style="padding-top: 40px">
+            <el-container>
+                <el-aside width="500px"></el-aside>
+                <el-main>
+                    <el-row>
+                        <el-col :span="2">
+                            <span class="input-label">I want to</span>
+                        </el-col>
+                        <el-col :span="11">
+                            <el-input placeholder="Do something cool today" v-model="inputActivity"></el-input>
+                        </el-col>
+                    </el-row>
+                    <el-row>
+                        <el-col :span="2" style="padding-left: 47px">
+                            <span class="input-label">at</span>
+                        </el-col>
+                        <el-col :span="4">
+                            <el-input placeholder="Location" v-model="inputLocation"></el-input>
+                        </el-col>
+                        <el-col :span="2" style="padding-left: 47px">
+                            <span class="input-label">at</span>
+                        </el-col>
+                        <el-col :span="4">
+                            <el-date-picker v-model="inputtime" type="datetime" placeholder="Select date and time">
+                            </el-date-picker>
+                        </el-col>
+                    </el-row>
+                    <el-row>
+                        <el-col :span="2">
+                            <span class="input-label">Category</span>
+                        </el-col>
+                        <el-col :span="4">
+                            <el-select v-model="value" placeholder="Category">
+                                <el-option v-for="item in options" :key="item.value" :label="item.label" :value="item.value">
+                                </el-option>
+                            </el-select>
+                        </el-col>
+                    </el-row>
+                    <el-row>
+                        <el-col style="padding-left: 450px">
+                            <el-button type="success" @click.native="confirm" plain>Confirm</el-button>
+                        </el-col>
+                    </el-row>
+                </el-main>
+            </el-container>
+            <el-container style="padding-left: 200px; padding-right: 200px">
+                <el-main>
+                    <div>
+                        <span class="text">Joined Activities</span>
+                    </div>
+                    <div>
+                        <joined></joined>
+                    </div>
+                </el-main>
+            </el-container>
+            <el-container style="padding-left: 200px; padding-right: 200px">
+                <el-main>
+                    <span class="text">Activities</span>
+                    <activitymenu></activitymenu>
+                    <div>
+                        <container></container>
+                    </div>
+                </el-main>
+            </el-container>
+        </div>
+    </div>
+    <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-messaging.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-functions.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+    <script>
+    // Initialize Firebase
+    var config = {
+        apiKey: "AIzaSyC6sVppXkjLt-RnzN7V414gO5Utbs-U-sQ",
+        authDomain: "futurehack-3296e.firebaseapp.com",
+        databaseURL: "https://futurehack-3296e.firebaseio.com",
+        projectId: "futurehack-3296e",
+        storageBucket: "futurehack-3296e.appspot.com",
+        messagingSenderId: "938802848860"
+    };
+    firebase.initializeApp(config);
+    </script>
+    <script src="https://unpkg.com/vuefire/dist/vuefire.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+    <script src="//unpkg.com/element-ui/lib/umd/locale/en.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>
