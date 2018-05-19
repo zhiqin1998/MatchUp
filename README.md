@@ -1,7 +1,7 @@
 # Match Up
 
 # Brief Description
-A website created for University of Malaya (UM) students to create and join any activities inside the campus may it be studying together, playing sports, or others.
+A website created during FutureHack hackathon at Asia Pasific University for University of Malaya (UM) students to create and join any activities inside the campus may it be studying together, playing sports, or others.
  
 # Problem Statement
 Through our survey, we found out that students around UM feel boring doing stuff by themself and wishes to know people with the same interests that would join their activities. Sometimes, when all our friend's are busy with things and we do not like doing things alone, it is very hard and awkward to approach strangers and invite them to join our activity. Moreover, we also cannot determined whether the person is interested in our activity.
