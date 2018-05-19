@@ -16,3 +16,5 @@ With Vue.js and Firebase, the website is created. Users are required to signup a
 4. Others..
 
 https://zhiqin1998.github.io/MatchUp/
+
+** Code might be messy due to short time **
